@@ -1,0 +1,77 @@
+functions in linux
+
+1. Một số câu lệnh chung
+
+    1.man <tên câu lệnh>  : để xem mô tả về câu lệnh
+    2.sudo (viết tắt của superuser do) : đứng trước các câu lệnh, chạy với quyền admin.
+    3.whoami  : hiển thị username
+    4.ls : liệt kê tất cả các file tại thư mục đang đứng  (xem thêm ls -a hay ls -l)
+    5.echo "string" : echo như một lệnh print trong các ngôn ngữ lập trình, nó sẽ in ra một
+    đoạn string hay giá trị của một biến 
+    6.history : liệt kê các lệnh đã dùng trước đó 
+    7.clear : Xóa toàn bộ hiển thị trên terminal 
+
+2. Các lệnh với file hay thư mục
+    
+    1.pwd (print working directory) : in ra đường dẫn đầy đủ của thư mục bạn đang đứng
+    2.mkdir <tên thư mục> : tạo thư mục
+    3.touch : tạo file mới (ví dụ : touch mikasa.txt  để tạo file mikasa.txt)
+    4.grep : tìm kiếm một đoạn text trong một file hay thư mục 
+    5.unzip để giải nén file zip  : unzip <tên file> 
+    6.cd (change directory) : lệnh này giúp ta di chuyển ra vào các thư mục khác nhau
+    ví dụ:  cd .   -> đứng yên ở thư mục hiện tại 
+	    cd ..   -> di chuyển ra thư mục cha 
+	    cd ../../    -> di chuyển ra thư mục cha của thư mục cha =))
+	    cd tên_đường_dẫn  -> di chuyển theo tên đường dẫn hợp lệ 
+	    cd ~  -> di chuyển về thư mục gốc là home/username  
+
+3. Một số lệnh về thông tin của hệ thống 
+
+    1.df (disk free) : hiển thị thông tin về rom (or df -h)
+    2.du (disk usage) : hiển thị kích thước của tất cả các file nằm trong thư mục đang đứng
+    nếu không truyền vào tên thư mục (or du -h )
+    3.free (hay free -h) : hiển thị thông tin về ram ( or free -h)
+    4.uname -a : Hiển thị một vài thông tin cơ bản của hệ thống
+    5.lsb_release -a : Hiển thị thông tin về hệ thống linux
+    6.ps aux hay ps aux | less : Hiển thị các tiến trình 
+    
+4. Lệnh về thông tin mạng
+
+    1.ss : kiểm tra thông tin về socket 
+    2.ss -s : hiển thị tổng số socket
+    3.ss -l : hiển thị mọi cổng mở
+    4.ss -pl : kiểm tra tên tiến trình sử dụng socket mở
+    5.ss -t -a : hiển thị mọi socket TCP
+    6.ss -u -a : hiển thị mọi socket UDP
+    7.ping <domain address> : gửi các gói tin đến địa chỉ domain (hay ip) để tính tốc độ
+    request (thường dùng để check xem có bị lỗi đường truyền không)
+    8.netstat : đưa ra các thống kê bao gồm socket và các bảng định tuyến (netstat -s,
+    netstat -p)
+
+5. Một số câu lệnh hữu dụng khác
+
+    1.whereis <packagename> : để tìm vị trí lưu trữ một package nào đó 
+    2.sudo shutdown -h now : tắt máy ngay lập tức 
+    (hay vui hơn có thể dùng : shutdown +10 "you have a meeting =)"  tắt máy sau 10 
+	phút với một dòng thông báo)
+    3.sudo reboot : khởi động lại máy 
+    4.poweroff : Tắt máy
+    5.sudo hdparm -I /dev/sda : kiểm tra thông tin phần cứng
+    6.sudo apt install <packagename> : Cài đặt package 
+
+6. Một số thủ thuật khác
+
+    1.Ctrl + A or Home : Di chuyển con trỏ chuột về vị trí đầu dòng lệnh
+    2.Ctr + Shift + T : mở một tab terminal mới, như trên trình duyệt
+    3.Ctrl + E or End - Di chuyển con trỏ chuột đến vị trí cuối dòng lệnh
+    4.Ctrl + K - Xóa từ vị trí hiện tại của con trỏ đến cuối của dòng
+    5.Ctrl + U - Xóa từ vị trí bắt đầu của dòng đến vị trí hiện tại của con trỏ
+    6.Ctrl + W - Xóa từ đứng trước con trỏ
+    7.Alt + B - Di chuyển lùi lại một từ
+    8.Alt + F - Di chuyển tiến lên một từ
+    9.Alt + C - Viết hoa kí tự ở vị trí con trỏ và chuyển con trỏ xuống cuối dòng
+   10.Ctrl + Shift + C để copy. ---- Ctrl + shift + v để paste
+
+
+
+

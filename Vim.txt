@@ -1,0 +1,171 @@
+Vim 
+
+
+1. Chế độ trong Vim
+🔹 Normal Mode (Mặc định, dùng để điều hướng, chỉnh sửa)
+🔹 Insert Mode (i / a / o → Dùng để nhập văn bản)
+🔹 Visual Mode (v / V / Ctrl+v → Chọn văn bản)
+🔹 Command Mode (: → Gõ lệnh, như lưu file, thoát)
+
+📌 Chuyển đổi chế độ
+
+Esc → Trở lại Normal Mode từ Insert/Visual
+
+2. Di chuyển con trỏ
+🔹 Cơ bản
+
+h → Sang trái
+l → Sang phải
+j → Xuống dưới
+k → Lên trên
+
+🔹 Di chuyển theo từ và dòng
+
+w → Tới đầu từ tiếp theo
+e → Tới cuối từ hiện tại
+b → Quay lại đầu từ trước đó
+0 → Đầu dòng
+^ → Đầu dòng nhưng bỏ qua khoảng trắng
+$ → Cuối dòng
+
+🔹 Di chuyển theo đoạn & file
+
+{ → Lùi về đoạn văn trước
+} → Tiến tới đoạn văn sau
+gg → Tới đầu file
+G → Tới cuối file
+nG → Tới dòng số n
+H → Đầu màn hình
+M → Giữa màn hình
+L → Cuối màn hình
+
+
+3. Chèn văn bản (Insert Mode)
+i → Chèn trước con trỏ
+I → Chèn đầu dòng
+a → Chèn sau con trỏ
+A → Chèn cuối dòng
+o → Thêm dòng mới bên dưới
+O → Thêm dòng mới bên trên
+
+
+4. Xóa và chỉnh sửa văn bản
+
+🔹 Xóa ký tự và từ
+
+x → Xóa ký tự tại con trỏ
+X → Xóa ký tự trước con trỏ
+dw → Xóa một từ
+d$ → Xóa đến cuối dòng
+dd → Xóa cả dòng
+
+🔹 Sửa văn bản
+
+r<char> → Thay thế ký tự hiện tại bằng <char>
+R → Ghi đè ký tự (Replace Mode)
+cw → Thay đổi một từ (chuyển sang Insert Mode)
+C → Thay đổi từ con trỏ đến cuối dòng
+
+🔹 Hoàn tác và lặp lại
+
+u → Hoàn tác
+Ctrl+r → Khôi phục thao tác hoàn tác
+. → Lặp lại lệnh gần nhất
+
+5. Copy, Cut, Paste (Yank, Delete, Put)
+yy hoặc Y → Copy cả dòng
+yw → Copy một từ
+y$ → Copy từ con trỏ đến cuối dòng
+p → Dán sau con trỏ
+P → Dán trước con trỏ
+dd → Cắt một dòng
+dG → Cắt từ dòng hiện tại đến cuối file
+
+6. Tìm kiếm và thay thế
+🔹 Tìm kiếm
+
+/keyword → Tìm keyword xuống dưới
+?keyword → Tìm keyword lên trên
+n → Lặp lại tìm kiếm cùng hướng
+N → Lặp lại tìm kiếm ngược hướng
+🔹 Thay thế trong dòng
+
+:s/old/new/g → Thay old thành new trong dòng hiện tại
+:%s/old/new/g → Thay toàn bộ file
+:%s/old/new/gc → Hỏi trước khi thay thế
+
+7. Chế độ Visual (Chọn văn bản)
+v → Chế độ chọn ký tự
+V → Chế độ chọn dòng
+Ctrl+v → Chế độ chọn khối (block mode)
+y → Copy vùng chọn
+d → Cắt vùng chọn
+> / < → Tăng / giảm thụt dòng
+
+8. Lưu file và thoát
+:w → Lưu file
+:q → Thoát
+:wq hoặc ZZ → Lưu và thoát
+:q! → Thoát mà không lưu
+
+9. Làm việc với nhiều file và cửa sổ
+🔹 Tab
+
+:tabnew file → Mở file trong tab mới
+gt → Chuyển tab tiếp theo
+gT → Chuyển tab trước
+🔹 Cửa sổ (Split)
+
+:sp file → Chia đôi màn hình theo chiều ngang
+:vsp file → Chia đôi màn hình theo chiều dọc
+Ctrl+w w → Chuyển đổi giữa các cửa sổ
+Ctrl+w q → Đóng cửa sổ hiện tại
+10. Macro & Lệnh Lặp
+q<char> → Bắt đầu ghi macro vào thanh ghi <char>
+q → Dừng ghi macro
+@<char> → Chạy macro
+@@ → Lặp lại macro cuối cùng
+📌 Mẹo học Vim nhanh
+✔ Bắt đầu với di chuyển (h j k l), xóa (x, dw, dd), copy (yy, p)
+✔ Luyện tập tìm kiếm (/keyword, n), undo (u), redo (Ctrl + r)
+✔ Dùng vimtutor trên terminal để thực hành ngay
+✔ Chơi Vim Adventures để học vui hơn!
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+gg : là lên đầu
+G : xuống cuối
+di{ / ( : xóa toàn trong {} or ();
+dd : xóa dòng ( 3dd là xóa 3 dòng);
+u là undo;
+ctrl + r = undo undo;
+} dòng trống tiếp theo;
+{ dòng trống trước đó;
+yy : copy dòng hiện tại;
+p : paste  xuống dưới cái yy vừa copy, or cái dd vừa xóa   ;
+P : paste lên trên cái yy vừa copy, or cái dd vừa xóa   ;
+cc = dd rồi i
+o : mở 1 dòng mới bên dưới;
+O : mở 1 dòng mới bên trên;
+r : replace ngay chỗ con trỏ đứng bằng chữ cái khác;
+w: tiến đến word tiếp theo;
+b : đến đầu word hiện tại;
+e : đến cuối word hiện tại
+E : đến cuối long word hiện tại;
+$ : đến cuối dòng;
+0 : đến đầu dòng;
+c /d + đích đến để sửa hoặc xóa từ chỗ đang đứng đến đích ;
+/ để tìm từ trong file từ trên xuống dưới;
+? để tìm từ trong file từ dưới lên trên ;
+x : để xóa tại chỗ đang đứng;
+t : tìm 1 chữ cái tiếp theo trên dòng và đặt con trỏ đằng trước chữ cái đấy;
+f : tìm 1 chữ cái tiếp theo trên dòng và đặt con trỏ ngay tại chữ cái đấy;
+I : insert vào trước chữ cái đầu tiên của dòng; 
+A : insert vào cuối dòng ; 
+ctrl o : quay lại chỗ vừa đứng;
+ctrl i : quay lại chỗ vừa đi;
+v : bôi ;
+ggVG : ctrl A;

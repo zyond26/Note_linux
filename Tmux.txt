@@ -1,0 +1,140 @@
+Tmux
+
+1. Cơ bản về Tmux
+Khởi động Tmux:
+tmux
+
+Khởi động và đặt tên session:
+tmux new -s tên_session
+
+Thoát Tmux mà không đóng session (Detach):
+Ctrl + B, sau đó nhấn D
+
+Quay lại session (Attach lại):
+tmux attach -t tên_session
+
+Liệt kê các session đang chạy:
+tmux ls
+
+Đóng một session cụ thể:
+tmux kill-session -t tên_session
+
+Đóng tất cả session:
+tmux kill-server
+
+
+2. Quản lý Cửa Sổ (Windows)
+Tạo cửa sổ mới:
+Ctrl + B, sau đó nhấn C
+
+Đổi tên cửa sổ:
+Ctrl + B, sau đó nhấn ,
+
+Chuyển đổi giữa các cửa sổ:
+Ctrl + B, sau đó nhấn số (0-9)
+
+Chuyển đến cửa sổ trước đó:
+Ctrl + B, sau đó nhấn P
+
+Chuyển đến cửa sổ tiếp theo:
+Ctrl + B, sau đó nhấn N
+
+Liệt kê tất cả cửa sổ:
+Ctrl + B, sau đó nhấn W
+
+Đóng cửa sổ hiện tại:
+Ctrl + B, sau đó nhấn &
+
+3. Quản lý Ô (Panes)
+
+Chia màn hình dọc:
+Ctrl + B, sau đó nhấn "
+
+Chia màn hình ngang:
+Ctrl + B, sau đó nhấn %
+
+Di chuyển giữa các ô:
+Ctrl + B, sau đó nhấn mũi tên (←, →, ↑, ↓)
+
+Hoán đổi vị trí giữa các ô:
+Ctrl + B, sau đó nhấn {
+
+Thay đổi kích thước ô:
+Ctrl + B, sau đó nhấn Ctrl + mũi tên
+
+Đóng ô hiện tại:
+Ctrl + B, sau đó nhấn X
+
+Phóng to/thu nhỏ một ô:
+Ctrl + B, sau đó nhấn Z
+
+
+4. Điều hướng và Quản lý
+
+Liệt kê các lệnh phím tắt:
+Ctrl + B, sau đó nhấn ?
+
+Hiển thị danh sách session, cửa sổ, ô:
+Ctrl + B, sau đó nhấn S
+
+Làm mới lại Tmux:
+Ctrl + B, sau đó nhấn : rồi nhập "refresh-client"
+Thoát Tmux hoàn toàn:
+exit
+
+5. Copy & Paste Mode (Sao chép và Dán)
+Vào chế độ Copy Mode:
+nginx
+
+Ctrl + B, sau đó nhấn [
+Di chuyển trong Copy Mode:
+↑ ↓ ← →: Di chuyển lên/xuống/trái/phải
+Ctrl + U: Cuộn lên nửa trang
+Ctrl + D: Cuộn xuống nửa trang
+Bắt đầu chọn văn bản:
+mathematica
+
+Space
+
+Sao chép văn bản đã chọn:
+mathematica
+
+
+Dán văn bản đã sao chép:
+Ctrl + B, sau đó nhấn ]
+
+
+6. Quản lý Session từ xa (SSH & Background)
+Chạy Tmux trong nền (Detached Mode):
+tmux new -d -s tên_session
+
+Gửi lệnh đến session đang chạy:
+tmux send-keys -t tên_session "lệnh_cần_chạy" C-m
+
+Chia sẻ session với người khác:
+tmux -S /tmp/shared attach
+
+7. Cấu hình Tmux (~/.tmux.conf)
+Thêm các dòng sau vào ~/.tmux.conf để tùy chỉnh trải nghiệm:
+
+Thay đổi phím điều khiển từ Ctrl + B thành Ctrl + A:
+set-option -g prefix C-a
+unbind-key C-b
+bind-key C-a send-prefix
+
+Bật chế độ tự động cập nhật màn hình:
+set-option -g aggressive-resize on
+
+Đổi màu thanh trạng thái:
+set-option -g status-bg colour235
+set-option -g status-fg colour136
+
+Sau khi chỉnh sửa, tải lại cấu hình:
+tmux source ~/.tmux.conf
+
+📌 Lộ trình học nhanh
+Học lệnh cơ bản: Mở session, tạo cửa sổ, chia màn hình.
+Thực hành phím tắt: Chuyển cửa sổ, di chuyển giữa các ô.
+Tùy chỉnh Tmux: Tạo file cấu hình (~/.tmux.conf).
+Làm việc từ xa: Dùng Tmux với SSH để duy trì session lâu dài.
+Thực hành nâng cao: Sử dụng Copy Mode, gửi lệnh giữa các session.

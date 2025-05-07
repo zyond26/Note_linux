@@ -1,0 +1,15 @@
+Shell script linux
+
+
+pwd : xem vị trí đang đứng
+
+- Các loại cd để chuyển từ vị trí đang đứng đến một folder khác 
++) cd .. : quay lại thư mục trước
++) cd ~ : mặc định là thư mục chính ban đầu home
++) cd - : đến thư mục trước vừa xem 
+
+ls : xem danh sách thư mục
++) ls -a : list all ( ý là xem được cả file ẩn)
++) ls -l : list long ( ý là hiển thị chi tiết ở dạng đầy đủ )
+
+

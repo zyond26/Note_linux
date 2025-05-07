@@ -1,0 +1,7 @@
+Những thứ cần học linux
+
+1.học shell script 
+2. học tmux
+3.học vim dùng cho terminal
+
+
